@@ -102,7 +102,7 @@ private:
 		while (curr != NULL) {
 			nxt = curr->next;
 			curr->next = pre;
-			if (pre != nullptr)
+			if (pre != NULL)
 				pre->prev = curr;
 			pre = curr;
 			curr = nxt;
@@ -113,11 +113,11 @@ private:
 	Node *reverseRecursive(Node *head) {
 		if (head == NULL || head->next == NULL) return head;
 		Node *restNode = reverseRecursive(head->next);
-		auto nxt = head->next;
+		Node* nxt = head->next;
 		nxt->next = head;
 		head->prev = nxt;
-		head->next = nullptr;
-		restNode->prev = nullptr;
+		head->next = NULL;
+		restNode->prev = NULL;
 		return restNode;
 	}
 
